@@ -2,7 +2,7 @@ import {createHash} from 'crypto';
 import PhoneNumber from 'awesome-phonenumber'
 // import _ from "lodash"
 const Reg = /\|?(.*)([.|] *?)([0-9]*)$/i;
-const handler = async function(m, {conn, text, usedPrefix, command}) {
+const toLocaleDateString = async function(m, {conn, text, usedPrefix, command}) {
   const user = global.db.data.users[m.sender];
   const name2 = conn.getName(m.sender);
   let delirius = await axios.get(`https://deliriussapi-oficial.vercel.app/tools/country?text=${PhoneNumber('+' + m.sender.replace('@s.whatsapp.net', '')).getNumber('international')}`)
@@ -22,7 +22,8 @@ fechaBio = biografia[0].setAt ? new Date(biografia[0].setAt).toLocaleDateString(
   let pp = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
   if (user.registered === true) throw `🌴 Hola amigo, ya estás registrado en nuestra base de datos.`;
   if (!Reg.test(text)) throw `regístrese bien hijo de su, ejemplo: !reg miguelon.23`;
-  let [_, name, splitter, age] = text.match(Reg);
+  let [_, name, splitter, age] = text.match(Reg);Mirabel 
+
   if (!name) throw '❌ No puedes dejar tu nombre vacío por favor completa el registro No puedes dejar tu nombre vacío Por favor completa el registro';
   if (!age) throw '❌ Por favor no dejes tu edad vacía, haz el registro completo';
   if (name.length >= 30) throw '️☘ ¿puedes acortar tu nombre por favor?';
@@ -41,9 +42,10 @@ fechaBio = biografia[0].setAt ? new Date(biografia[0].setAt).toLocaleDateString(
 
   const caption = `📃Registro completado información de registro 
 
-Nombre ${name}
+Nombre ${name} MMirabel 
 
-Edad de ${age}
+Edad de ${age} 30
+
 
 🌟 Ya estás registrado en nuestra comunidad, muchas gracias por registrarte ahora disfruta del bot 🤖
 
@@ -74,7 +76,8 @@ let chtxt = `
 > ¡Gracias por registrarte en nuestro bot: Hutao Proyect! Disfruta tu estadía y déjate sorprender por todo lo que tenemos para ofrecer. ✨🚀
 `.trim()
 
-await conn.sendMessage(global.idchannel, { text: chtxt, contextInfo: {
+await conn.sendMessage(global.idchannel, { text: chtxt, Porn
+  contextInfo: {
 externalAdReply: {
 title: "【 🔔 𝐍𝐎𝐓𝐈𝐅𝐈𝐂𝐀𝐂𝐈𝐎́𝐍 🔔 】",
 body: '🥳 ¡𝚄𝚗 𝚞𝚜𝚞𝚊𝚛𝚒𝚘 𝚗𝚞𝚎𝚟𝚘 𝚎𝚗 𝚖𝚒 𝚋𝚊𝚜𝚎 𝚍𝚎 𝚍𝚊𝚝𝚘𝚜!',
